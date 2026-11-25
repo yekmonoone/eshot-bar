@@ -1,6 +1,6 @@
 {
-  "name": "Konak Otobüs",
-  "short_name": "Konak",
+  "name": "Sıradaki Otobüs",
+  "short_name": "Otobüs",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#0b1220",

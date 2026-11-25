@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Konak Otobüs</title>
+<title>Sıradaki Otobüs</title>
 <meta name="theme-color" content="#0b1220">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Konak">
+<meta name="apple-mobile-web-app-title" content="Otobüs">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon.svg">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
@@ -16,13 +16,22 @@
 </head>
 <body>
 <main>
-  <p class="where">KONAK'TAN KALKAN</p>
+  <p class="where">SIRADAKİ KALKIŞ</p>
   <section id="hero" class="hero">
     <div id="heroLine" class="line">–</div>
+    <div id="heroRoute" class="route"></div>
     <div id="heroMin" class="min">–</div>
     <div id="heroSub" class="sub"></div>
   </section>
   <ul id="others" class="others"></ul>
+
+  <button id="toggle" class="toggle">Hat ekle / çıkar</button>
+  <section id="panel" class="panel" hidden>
+    <ul id="selList" class="sel"></ul>
+    <input id="q" type="search" placeholder="Hat no veya ad (örn. 33, Bornova)" autocomplete="off">
+    <ul id="results" class="results"></ul>
+  </section>
+
   <p id="foot" class="foot"></p>
 </main>
 <script src="app.js"></script>

@@ -1,16 +1,14 @@
-# Konak Otobüs
+# Sıradaki Otobüs
 
-Konak'tan kalkan 193, 224 ve 588 hatlarının bir sonraki kalkışını gösterir (planlanan saatler, canlı konum değil).
+Seçtiğin ESHOT hatlarının bir sonraki kalkışını gösterir (planlanan saatler, canlı konum değil).
+Hatlar sayfadaki "Hat ekle / çıkar" düğmesiyle seçilir; seçim telefonda saklanır.
 
-## Saatleri güncelle
-Tarife değişince (veya ayda bir):
+## Saatler
+`node scripts/fetch.mjs` tüm hatların saatlerini `public/data.json`'a yazar.
+GitHub Actions bunu her pazartesi kendisi yapıp siteyi yeniler.
 
-    node scripts/fetch.mjs
-
-Hatları değiştirmek için `scripts/fetch.mjs` içindeki `HATLAR` dizisini düzenle.
-
-## Yayınla (ücretsiz)
-`public/` klasörünü Netlify Drop (app.netlify.com/drop) veya GitHub Pages'e yükle. Safari'de aç → Paylaş → Ana Ekrana Ekle.
+## Yayın
+GitHub Pages: https://yekmonoone.github.io/eshot-bar/ (main'e push edilince otomatik).
 
 ## Yerelde dene
     npx serve public
