@@ -28,6 +28,8 @@ jobs:
         with:
           node-version: 22
       - name: Saatleri çek (başarısız olursa depodaki data.json kalır)
+        timeout-minutes: 5
+        continue-on-error: true
         run: node scripts/fetch.mjs || echo "Çekilemedi, mevcut data.json kullanılıyor"
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

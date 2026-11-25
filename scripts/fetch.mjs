@@ -4,7 +4,11 @@ import { writeFile } from "node:fs/promises";
 
 const URL_ALL = "https://acikveriwapi.izmir.bel.tr/AcikVeriEshot/Seferler/HareketSaatleriniGetir";
 
-const res = await fetch(URL_ALL);
+let res;
+for (let i = 1; ; i++) {
+  try { res = await fetch(URL_ALL, { signal: AbortSignal.timeout(60000) }); break; }
+  catch (e) { if (i >= 3) throw e; console.warn("Deneme", i, "başarısız, tekrar..."); }
+}
 if (!res.ok) throw new Error(`${URL_ALL} -> ${res.status}`);
 const json = await res.json();
 if (!Array.isArray(json.Data) || json.Data.length < 1000) {
